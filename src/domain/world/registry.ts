@@ -80,7 +80,7 @@ export const WORLD_REGISTRY: Record<string, WorldSpec> = {
       { id: "portal-city", targetWorldId: "central-city", targetRoute: "/world/central-city", label: "Central City Portal", pos: [12, 0, 18] },
       { id: "portal-forest", targetWorldId: "wisdom-forest", targetRoute: "/world/wisdom-forest", label: "Wisdom Forest Portal", pos: [-12, 0, 18] },
       { id: "portal-history", targetWorldId: "history-valley", targetRoute: "/world/history-valley", label: "History Valley Portal", pos: [-22, 0, 0] },
-      { id: "portal-mountains", targetWorldId: "knowledge-mountains", targetRoute: "/world/knowledge-mountains", label: "Knowledge Mountains Portal", pos: [22, 0, 0] },
+      { id: "portal-mountains", targetWorldId: "knowledge-mountains", targetRoute: "/world/knowledge-mountains", label: "Everest Peak Portal", pos: [22, 0, 0] },
       { id: "portal-ocean", targetWorldId: "infinite-ocean", targetRoute: "/world/infinite-ocean", label: "Infinite Ocean Portal", pos: [-16, 0, -22] },
       { id: "portal-space", targetWorldId: "space-zone", targetRoute: "/world/space-zone", label: "Space Zone Portal", pos: [16, 0, -22] },
     ],
@@ -163,7 +163,7 @@ export const WORLD_REGISTRY: Record<string, WorldSpec> = {
   "knowledge-mountains": {
     id: "knowledge-mountains",
     slug: "knowledge-mountains",
-    displayName: "Knowledge Mountains",
+    displayName: "Everest Peak",
     route: "/world/knowledge-mountains",
     status: "active",
     requiredLevel: 3,
@@ -171,7 +171,7 @@ export const WORLD_REGISTRY: Record<string, WorldSpec> = {
     conceptAsset: "world_map.jpg",
     entrySpawn: [0, 0, 20],
     leadGuardian: "tess",
-    description: "Mountain summits featuring strategic reasoning and advanced puzzle challenges.",
+    description: "Summit the legendary Everest Peak through strategic reasoning, advanced logic puzzles, and high-altitude challenges.",
     districts: [
       { id: "mountain-base", name: "Summit Base Camp", pos: [0, 0, 20], description: "Base camp overlook & portal concourse.", status: "unlocked", icon: "🏔️" },
       { id: "logic-peak", name: "Logic Peak Lab", pos: [-18, 0, 12], description: "Formal logic puzzles and multi-step deduction.", activityKey: "logic-peak", activityName: "Logic Peak Lab", status: "unlocked", icon: "🧩" },

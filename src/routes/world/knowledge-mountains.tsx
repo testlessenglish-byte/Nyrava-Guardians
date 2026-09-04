@@ -132,7 +132,7 @@ function KnowledgeMountainsPage() {
             World Map
           </Link>
           <div className="hidden rounded-2xl border border-sky-500/20 bg-slate-950/80 px-4 py-2 text-xs font-black text-sky-200 backdrop-blur sm:flex">
-            🏔️ Knowledge Mountains
+            🏔️ Everest Peak
           </div>
         </div>
 

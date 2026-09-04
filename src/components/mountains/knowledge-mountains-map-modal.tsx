@@ -21,7 +21,7 @@ export function KnowledgeMountainsMapModal({
       <div className="relative w-full max-w-3xl rounded-3xl border border-sky-500/30 bg-slate-900/95 p-6 text-slate-100 shadow-2xl">
         <div className="mb-6 flex items-center justify-between border-b border-slate-800 pb-4">
           <div>
-            <h2 className="text-2xl font-black text-sky-400">🏔️ Knowledge Mountains Map</h2>
+            <h2 className="text-2xl font-black text-sky-400">🏔️ Everest Peak Map</h2>
             <p className="text-xs text-sky-200/70">Mountain summits, formal logic labs, and strategic reasoning peaks</p>
           </div>
           <button

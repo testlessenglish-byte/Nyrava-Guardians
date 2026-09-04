@@ -39,8 +39,8 @@ export const REGIONS: Region[] = [
   },
   {
     id: "mountains",
-    name: "Knowledge Mountains",
-    tagline: "Caves · Temples · Challenges",
+    name: "Everest Peak",
+    tagline: "Summit · Logic · Mastery",
     center: [44, -46],
     radius: 34,
     accent: "#a5b4fc",
@@ -268,7 +268,7 @@ export const REPORT_CHALLENGE: Challenge = {
   skill: "Observation",
   prompt:
     "Before you report in: which region of Isla Central sits at the highest point of the island?",
-  options: ["Emerald Beach", "Knowledge Mountains", "History Valley"],
+  options: ["Emerald Beach", "Everest Peak", "History Valley"],
   answer: [1],
   success: "You were paying attention while you explored. That is the whole skill.",
 };
