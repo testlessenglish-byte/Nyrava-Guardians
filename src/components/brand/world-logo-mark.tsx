@@ -10,7 +10,14 @@ export function WorldLogoMark({
   rotation?: [number, number, number];
   size?: number;
 }) {
-  const texture = useTexture(logoUrl);
+  let texture = null;
+  try {
+    texture = useTexture(logoUrl);
+  } catch {
+    return null;
+  }
+
+  if (!texture) return null;
 
   return (
     <mesh position={position} rotation={rotation} renderOrder={10}>

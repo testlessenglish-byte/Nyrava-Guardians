@@ -17,7 +17,7 @@ export const Route = createFileRoute("/world")({
 function WorldRouteComponent() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   if (pathname === "/world" || pathname === "/world/") {
-    return <Navigate to="/realm" replace />;
+    return <WorldPage />;
   }
   return <Outlet />;
 }

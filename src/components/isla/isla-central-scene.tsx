@@ -9,6 +9,7 @@ import { updateThirdPersonCamera } from "@/components/game/core/camera-follower"
 import { type InputManager } from "@/components/game/core/input-manager";
 import { type PlayerMode } from "@/components/game/core/player-state-machine";
 import { WORLD_REGISTRY } from "@/domain/world/registry";
+import { IslaBrandOverlays } from "@/components/isla/isla-brand-overlays";
 
 const playerController = new PlayerController();
 
@@ -123,6 +124,7 @@ export function IslaCentralScene({
 
   return (
     <>
+      <IslaBrandOverlays />
       {/* Daylight Atmosphere matching media_1788489263906.jpg */}
       <color attach="background" args={["#2fb5f6"]} />
       <fog attach="fog" args={["#bae6fd", 40, 130]} />
