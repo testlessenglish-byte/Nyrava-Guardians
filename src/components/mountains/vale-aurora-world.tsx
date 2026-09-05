@@ -176,6 +176,10 @@ export function ValeAuroraWorld() {
     const mount = mountRef.current!;
     if (!mount) return;
 
+    while (mount.firstChild) {
+      mount.removeChild(mount.firstChild);
+    }
+
     const getW = () => mount.clientWidth || window.innerWidth;
     const getH = () => mount.clientHeight || window.innerHeight;
 
@@ -284,7 +288,13 @@ export function ValeAuroraWorld() {
     controls.addEventListener("unlock", () => setLocked(false));
     startRef.current = () => {
       setStarted(true);
-      if (!window.matchMedia("(pointer: coarse)").matches) controls.lock();
+      if (!window.matchMedia("(pointer: coarse)").matches) {
+        try {
+          controls.lock();
+        } catch {
+          // ignore pointer lock errors
+        }
+      }
     };
 
     const keys: Record<string, boolean> = {};
@@ -418,7 +428,7 @@ export function ValeAuroraWorld() {
       renderer.domElement.removeEventListener("touchend", onTouchEnd);
       controls.dispose();
       renderer.dispose();
-      if (mount.contains(renderer.domElement)) {
+      if (mount && mount.contains(renderer.domElement)) {
         mount.removeChild(renderer.domElement);
       }
     };
