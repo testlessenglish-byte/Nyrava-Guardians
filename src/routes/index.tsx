@@ -58,6 +58,11 @@ function WelcomePage() {
               <Building2 className="size-3.5 mr-1.5" /> Digital City
             </Button>
           </Link>
+          <Link to="/world/knowledge-mountains">
+            <Button className="w-full bg-sky-500 hover:bg-sky-400 text-slate-950 font-black text-xs rounded-xl shadow-lg">
+              🏔️ Everest Peak
+            </Button>
+          </Link>
           <Link to="/home-hq">
             <Button className="w-full bg-purple-500 hover:bg-purple-400 text-white font-black text-xs rounded-xl shadow-lg">
               <Home className="size-3.5 mr-1.5" /> Home HQ
