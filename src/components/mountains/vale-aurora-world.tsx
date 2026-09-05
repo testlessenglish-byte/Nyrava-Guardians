@@ -176,9 +176,12 @@ export function ValeAuroraWorld() {
     const mount = mountRef.current!;
     if (!mount) return;
 
+    const getW = () => mount.clientWidth || window.innerWidth;
+    const getH = () => mount.clientHeight || window.innerHeight;
+
     const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.8));
-    renderer.setSize(mount.clientWidth, mount.clientHeight);
+    renderer.setSize(getW(), getH());
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -187,7 +190,7 @@ export function ValeAuroraWorld() {
     mount.appendChild(renderer.domElement);
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(68, mount.clientWidth / mount.clientHeight, 0.1, 4000);
+    const camera = new THREE.PerspectiveCamera(68, getW() / getH(), 0.1, 4000);
     camera.position.set(0, valeTerrainHeight(60, 190) + 1.75, 190);
 
     // Sky + sun
@@ -397,9 +400,11 @@ export function ValeAuroraWorld() {
     animate();
 
     const onResize = () => {
-      camera.aspect = mount.clientWidth / mount.clientHeight;
+      const w = getW();
+      const h = getH();
+      camera.aspect = w / h;
       camera.updateProjectionMatrix();
-      renderer.setSize(mount.clientWidth, mount.clientHeight);
+      renderer.setSize(w, h);
     };
     window.addEventListener("resize", onResize);
 
@@ -420,8 +425,8 @@ export function ValeAuroraWorld() {
   }, []);
 
   return (
-    <div className="relative h-screen w-screen overflow-hidden bg-slate-950">
-      <div ref={mountRef} className="absolute inset-0" />
+    <div className="relative h-full w-full overflow-hidden bg-slate-950">
+      <div ref={mountRef} className="absolute inset-0 h-full w-full" />
       <ValeAuroraHud locked={locked} started={started} touch={touch} onStart={() => startRef.current()} />
     </div>
   );
